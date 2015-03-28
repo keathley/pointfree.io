@@ -14,7 +14,13 @@ build-type:          Simple
 cabal-version:       >=1.10
 
 executable pointfree-io
-  main-is:             Main.hs
-  build-depends:       base >=4.7 && <4.8
-                    ,  scotty
+  main-is:              Main.hs
+  build-depends:        base >=4.7 && <4.8
+                      , wai
+                      , http-types
+                      , text
+                      , scotty
+                      , wai-middleware-static
+                      , wai-extra
+                      , heroku
   default-language:    Haskell2010

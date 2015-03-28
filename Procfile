@@ -1,0 +1,1 @@
+web: ./dist/build/pointfree-io/pointfree-io
