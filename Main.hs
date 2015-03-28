@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+
 import Web.Scotty as S
 import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Middleware.Static
@@ -22,7 +23,7 @@ main = do
     post "/snippet" $ do
       code  <- param "code"
       pf    <- liftIO $ pointsFree code
-      S.json $ object ["pointfree" .= pf ]
+      S.json (PFCode pf)
 
     notFound $ do
       text "that route does not exist"
@@ -30,3 +31,8 @@ main = do
 pointsFree code = readProcess process (sanitizeArgs code) ""
 sanitizeArgs = words
 process = ".cabal-sandbox/bin/pointfree"
+
+data PFCode = PFCode { code :: String } deriving (Show)
+
+instance ToJSON PFCode where
+  toJSON (PFCode code) = object ["pointfree" .= code]
