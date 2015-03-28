@@ -23,4 +23,5 @@ executable pointfree-io
                       , wai-middleware-static
                       , wai-extra
                       , heroku
+                      , time
   default-language:    Haskell2010

@@ -4,12 +4,11 @@ import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Middleware.Static
 import System.Environment
 import Control.Monad
-import Data.Monoid
+-- import Data.Monoid
 
 main = do
   port <- liftM read $ getEnv "PORT"
-
-  scotty 3000 $ do
+  scotty port $ do
     middleware logStdoutDev
     middleware $ staticPolicy (noDots >-> addBase "static")
 
@@ -17,7 +16,8 @@ main = do
 
     post "/snippet" $ do
       code <- param "code"
-      html $ mconcat ["Posted: ", code]
+      text code
+      -- html $ mconcat ["Posted: ", code]
 
     notFound $ do
       text "that route does not exist"
