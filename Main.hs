@@ -22,7 +22,7 @@ main = do
     post "/snippet" $ do
       code  <- param "code"
       pf    <- liftIO $ pointsFree code
-      S.json $ object ["pointfree" .= T.pack pf ]
+      S.json $ object ["pointfree" .= pf ]
 
     notFound $ do
       text "that route does not exist"
@@ -30,6 +30,3 @@ main = do
 pointsFree code = readProcess process (sanitizeArgs code) ""
 sanitizeArgs = words
 process = ".cabal-sandbox/bin/pointfree"
-
--- instance ToJSON String where
---   toJSON str = object ["ok" .= str]
