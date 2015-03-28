@@ -21,7 +21,6 @@ executable pointfree-io
                       , wai
                       , warp
                       , http-types
-                      , resourcet
                       , text
                       , scotty
                       , wai-middleware-static
