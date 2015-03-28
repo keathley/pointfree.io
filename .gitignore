@@ -4,6 +4,7 @@ cabal-dev
 *.hi
 *.chi
 *.chs.h
+*.sublime*
 .hsenv
 .cabal-sandbox
 cabal.sandbox.config
