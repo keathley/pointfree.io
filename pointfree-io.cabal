@@ -16,14 +16,18 @@ cabal-version:       >=1.10
 executable pointfree-io
   main-is:              Main.hs
   build-depends:        base >=4.7 && <4.8
+                      , aeson
                       , process
                       , wai
+                      , warp
                       , http-types
+                      , resourcet
                       , text
                       , scotty
                       , wai-middleware-static
                       , wai-extra
                       , heroku
                       , transformers
+                      , bytestring
                       , time
   default-language:    Haskell2010
