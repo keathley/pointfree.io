@@ -1,1 +1,2 @@
-web: ./dist/build/pointfree-io/pointfree-io
+web: cabal run -- -p $PORT
+
