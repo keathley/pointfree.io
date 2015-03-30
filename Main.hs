@@ -36,5 +36,5 @@ main = do
 
 pointsFree code = readProcess process (sanitizeArgs code) ""
 sanitizeArgs = words
-process = ".cabal-sandbox/bin/pointfree"
+process = "./bin/pointfree"
 
