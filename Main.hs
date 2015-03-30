@@ -16,12 +16,7 @@ import qualified Data.Text.Lazy as T
 import GHC.Generics (Generic)
 
 data PFCode = PFCode { code :: String } deriving (Show, Generic)
-
 instance ToJSON PFCode
-
-pointsFree code = readProcess process (sanitizeArgs code) ""
-sanitizeArgs = words
-process = ".cabal-sandbox/bin/pointfree"
 
 main = do
   port <- liftM read $ getEnv "PORT"
@@ -37,5 +32,9 @@ main = do
       pf    <- liftIO $ pointsFree code
       json (PFCode pf)
 
-    notFound $ do
-      text "that route does not exist"
+    notFound $ text "that route does not exist"
+
+pointsFree code = readProcess process (sanitizeArgs code) ""
+sanitizeArgs = words
+process = ".cabal-sandbox/bin/pointfree"
+

@@ -30,3 +30,4 @@ executable pointfree-io
                       , bytestring
                       , time
   default-language:    Haskell2010
+
