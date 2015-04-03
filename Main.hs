@@ -37,4 +37,3 @@ main = do
 pointsFree code = readProcess process (sanitizeArgs code) ""
 sanitizeArgs = words
 process = "./bin/pointfree"
-
