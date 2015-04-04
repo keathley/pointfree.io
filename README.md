@@ -4,9 +4,7 @@ A web site for converting haskell code into pointfree haskell code
 
 ## About
 
-There's really not a lot more too it.  This is just a basic web service built in scotty that converts haskell code 
-into pointfree haskell code.  I built it as a way of learning more about building services in Haskell.  It's really 
-just a toy.  Don't take it too seriously.
+This is just a basic web service built in scotty that converts haskell code into pointfree haskell code.  I built it as a way of learning more about building services in Haskell.  It's really just a toy.  Don't take it too seriously.
 
 ## Getting started / Installation
 
