@@ -9,4 +9,5 @@ cabal-dev
 .cabal-sandbox
 cabal.sandbox.config
 bin/
+node_modules/
 

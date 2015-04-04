@@ -1,0 +1,55 @@
+html {
+  color: #404040;
+  font: 400 1em/1.4 'Open Sans',sans-serif;
+}
+
+.site {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .content {
+    padding-top: 20px;
+    flex: 1 0 auto;
+    width: 100%;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .title,
+    .tag-line
+    {
+      text-align: center;
+      line-height: .8;
+    }
+
+    .title {
+      font-size: 48px;
+      margin-bottom: 5px;
+    }
+
+    .tag-line {
+      margin-top: 14px;
+      font-size: 20px;
+    }
+  }
+}
+
+.code-input {
+  display: flex;
+  margin-top: 40px;
+
+  &__field {
+    flex: 1;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: monaco, courier;
+  }
+
+  &__item {
+
+  }
+}

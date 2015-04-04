@@ -1,0 +1,31 @@
+{
+  "name": "pointfree.io",
+  "version": "1.0.0",
+  "description": "The frontend for pointfree.io",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keathley/pointfree.io.git"
+  },
+  "keywords": [
+    "haskell",
+    "pointfree"
+  ],
+  "author": "Chris Keathley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keathley/pointfree.io/issues"
+  },
+  "homepage": "https://github.com/keathley/pointfree.io",
+  "dependencies": {
+    "autoprefixer-loader": "^1.2.0",
+    "css-loader": "^0.9.1",
+    "node-sass": "^2.1.1",
+    "sass-loader": "^0.6.0",
+    "style-loader": "^0.9.0",
+    "webpack": "^1.7.3"
+  }
+}
