@@ -12,9 +12,24 @@
       <div class="container">
         <h1 class="title">Pointfree.io</h1>
         <h2 class="tag-line">convert Haskell code into pointfree Haskell code</h2>
-        <div class="code-input">
-          <input type="text" class="code-input__field" placeholder="What code do you want to convert?">
-          <button class="code-input__item">Convert</button>
+        <div class="code">
+          <h2 class="code__label">
+            What code do you want to convert?
+          </h2>
+          <div class="code-input">
+            <input type="text" class="code-input__field js-original-code">
+            <button class="code-input__item js-submit-conversion">
+              Convert
+            </button>
+          </div>
+        </div>
+        <div class="code">
+          <h2 class="code__label">
+            Pointsfree Version
+          </h2>
+          <div class="code-output">
+            <span class="js-pointfree-code"></span>
+          </div>
         </div>
       </div>
     </main>

@@ -37,9 +37,20 @@ html {
   }
 }
 
+.code {
+  margin-top: 70px;
+
+  &__label {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-top: 35px;
+  }
+}
+
 .code-input {
   display: flex;
-  margin-top: 40px;
 
   &__field {
     flex: 1;
@@ -48,8 +59,15 @@ html {
     font-size: 14px;
     font-family: monaco, courier;
   }
+}
 
-  &__item {
+.code-output {
+  border: 1px solid #ccc;
+  min-height: 45px;
 
+  span {
+    font-family: monaco, courier;
+    padding: 10px 20px;
+    display: block;
   }
 }

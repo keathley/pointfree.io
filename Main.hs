@@ -17,6 +17,7 @@ import GHC.Generics (Generic)
 
 data PFCode = PFCode { code :: String } deriving (Show, Generic)
 instance ToJSON PFCode
+instance FromJSON PFCode
 
 main = do
   port <- liftM read $ getEnv "PORT"
@@ -27,9 +28,9 @@ main = do
 
     get "/" $ file "static/index.html"
 
-    post "/snippet" $ do
-      code  <- param "code"
-      pf    <- liftIO $ pointsFree code
+    get "/snippet" $ do
+      c  <- param "code"
+      pf    <- liftIO $ pointsFree c
       json (PFCode pf)
 
     notFound $ text "that route does not exist"
