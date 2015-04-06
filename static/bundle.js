@@ -49,9 +49,13 @@
 	__webpack_require__(1);
 
 	$(function() {
-	  $(document).on('click', '.js-submit-conversion', handleConvertClick);
+	  $(document).on('click', '.js-submit-conversion', handleConvert);
+	  $(".js-original-code").on("keydown", handleConvert)
 
-	  function handleConvertClick() {
+	  function handleConvert(e) {
+	    var keyCode = e.keyCode || e.which;
+	    if (keyCode && keyCode !== 13 && keyCode !== 1) return;
+
 	    var c = $('.js-original-code').val()
 
 	    $.ajax({
