@@ -47,6 +47,7 @@ and you should be good.
 * Have a better way to do initial setup.  Having to build and symlink the pointfree binary is a painful step
 * Remove pointfree as a dependency altogether.  This would mean creating a library version of the pointfree code.
 * Add tests
+* Allow endpoints to accept json data
 * ...
 * Profit? JKLOL probably not.
 
