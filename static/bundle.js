@@ -61,8 +61,6 @@
 	    $.ajax({
 	      method: 'GET',
 	      url: '/snippet',
-	      // contentType: "application/json; charset=utf-8",
-	      // dataType: "json",
 	      data: "code=" + c,
 	      success: handleAjaxSuccess
 	    });
