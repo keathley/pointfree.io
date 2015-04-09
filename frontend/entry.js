@@ -5,6 +5,11 @@ require('./scss/main.scss');
 $(function() {
   $(document).on('click', '.js-submit-conversion', handleConvert);
   $(".js-original-code").on("keydown", handleConvert)
+  $('.js-pointfree-code').click(onPointfreeClick)
+
+  function onPointfreeClick(e) {
+    $(this).select()
+  }
 
   function handleConvert(e) {
     var keyCode = e.keyCode || e.which;
@@ -21,7 +26,8 @@ $(function() {
 
     function handleAjaxSuccess(data) {
       var pfCode = data.code
-      $('.js-pointfree-code').text(pfCode)
+      var $pfInput = $('.js-pointfree-code')
+      $pfInput.val(pfCode)
     }
   }
 });

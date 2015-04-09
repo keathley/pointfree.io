@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
 html {
   color: #404040;
   font: 400 1em/1.4 'Open Sans',sans-serif;
@@ -31,7 +33,7 @@ html {
     }
 
     .tag-line {
-      margin-top: 14px;
+      margin-top: 20px;
       font-size: 20px;
     }
   }
@@ -58,16 +60,31 @@ html {
     padding: 10px 20px;
     font-size: 14px;
     font-family: monaco, courier;
+    border: 1px solid #ccc;
+    border-radius: 2px 0 0 2px;
+  }
+
+  &__item {
+    color: #666;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgba(147, 128, 108, 0.1);
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
   }
 }
 
 .code-output {
-  border: 1px solid #ccc;
-  min-height: 45px;
+  display: flex;
 
-  span {
-    font-family: monaco, courier;
+  input {
+    flex: 1;
+    width: 100%;
     padding: 10px 20px;
-    display: block;
+    font-size: 14px;
+    font-family: monaco,courier;
+    border: 1px solid #ccc;
+    border-radius: 2px 2px 2px 2px;
   }
 }

@@ -13,7 +13,6 @@
 
     ga('create', 'UA-61635542-1', 'auto');
     ga('send', 'pageview');
-
   </script>
   </head>
   <body class="site">
@@ -26,7 +25,7 @@
             What code do you want to convert?
           </h2>
           <div class="code-input">
-            <input type="text" class="code-input__field js-original-code">
+            <input type="text" class="code-input__field js-original-code" tabindex="1">
             <button class="code-input__item js-submit-conversion">
               Convert
             </button>
@@ -37,7 +36,7 @@
             Pointsfree Version
           </h2>
           <div class="code-output">
-            <span class="js-pointfree-code"></span>
+            <input class="js-pointfree-code" readonly="" tabindex="2">
           </div>
         </div>
       </div>
