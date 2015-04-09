@@ -1,7 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 html {
   color: #404040;
-  font: 400 1em/1.4 'Open Sans', sans-serif; }
+  font: 400 1em/1.4 'Open Sans', sans-serif;
+  background-color: #181818; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #b8b8b8; }
+
+p, span {
+  color: #E8E8E8; }
 
 .site {
   display: -webkit-box;
@@ -26,7 +33,8 @@ html {
     margin: 0 auto; }
     .site .container .title, .site .container .tag-line {
       text-align: center;
-      line-height: .8; }
+      line-height: .8;
+      color: #7CAFC2; }
     .site .container .title {
       font-size: 48px;
       margin-bottom: 5px; }
@@ -34,12 +42,15 @@ html {
       margin-top: 20px;
       font-size: 20px; }
 
-.code {
-  margin-top: 70px; }
-  .code__label {
-    margin-bottom: 0; }
-  .code:last-child {
-    margin-top: 35px; }
+.form-container {
+  padding: 1em 1.5em;
+  margin-top: 60px; }
+
+.code__label {
+  margin-bottom: 3px;
+  font-size: 16px; }
+.code:last-child {
+  margin-top: 20px; }
 
 .code-input {
   display: -webkit-box;
@@ -55,16 +66,25 @@ html {
     padding: 10px 20px;
     font-size: 14px;
     font-family: monaco, courier;
-    border: 1px solid #ccc;
-    border-radius: 2px 0 0 2px; }
+    border: 1px solid #b8b8b8;
+    border-radius: 4px 0 0 4px; }
+    .code-input__field:focus {
+      border-color: #7CAFC2; }
   .code-input__item {
-    color: #666;
     font-weight: 400;
-    font-size: 16px;
-    background-color: rgba(147, 128, 108, 0.1);
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 2px 2px 0; }
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #AB4642;
+    color: white;
+    border: 2px solid #AB4642;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer; }
+    .code-input__item:hover {
+      -webkit-transition: all 0.1s ease;
+              transition: all 0.1s ease;
+      color: white;
+      background-color: #b94d49;
+      border-color: #b94d49; }
 
 .code-output {
   display: -webkit-box;
@@ -80,5 +100,5 @@ html {
     padding: 10px 20px;
     font-size: 14px;
     font-family: monaco,courier;
-    border: 1px solid #ccc;
-    border-radius: 2px 2px 2px 2px; }
+    border: 1px solid #b8b8b8;
+    border-radius: 4px; }

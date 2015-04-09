@@ -1,8 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
+$background: #181818;
+$copy: #E8E8E8;
+// $headline: #F7CA88;
+$headline: #7CAFC2;
+$accent1: #b8b8b8;
+$accent2: #1AD3F1;
+$accent3: #FDE403;
+
 html {
   color: #404040;
   font: 400 1em/1.4 'Open Sans',sans-serif;
+  background-color: $background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $accent1;
+}
+
+p, span {
+  color: $copy;
 }
 
 .site {
@@ -25,6 +42,7 @@ html {
     {
       text-align: center;
       line-height: .8;
+      color: $headline;
     }
 
     .title {
@@ -39,15 +57,21 @@ html {
   }
 }
 
-.code {
-  margin-top: 70px;
+.form-container {
+  // border: 2px solid #ccc;
+  // border-radius: 0.2857rem;
+  padding: 1em 1.5em;
+  margin-top: 60px;
+}
 
+.code {
   &__label {
-    margin-bottom: 0;
+    margin-bottom: 3px;
+    font-size: 16px;
   }
 
   &:last-child {
-    margin-top: 35px;
+    margin-top: 20px;
   }
 }
 
@@ -60,18 +84,34 @@ html {
     padding: 10px 20px;
     font-size: 14px;
     font-family: monaco, courier;
-    border: 1px solid #ccc;
-    border-radius: 2px 0 0 2px;
+    border: 1px solid $accent1;
+    border-radius: 4px 0 0 4px;
+
+    &:focus {
+      border-color: $headline;
+    }
   }
 
   &__item {
-    color: #666;
+    $button-color: #AB4642;
+
     font-weight: 400;
-    font-size: 16px;
-    background-color: rgba(147, 128, 108, 0.1);
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 2px 2px 0;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: $button-color;
+    color: white;
+    border: 2px solid $button-color;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+
+    &:hover {
+      $hover-color: lighten($button-color, 4);
+
+      transition: all 0.1s ease;
+      color: white;
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
   }
 }
 
@@ -84,7 +124,7 @@ html {
     padding: 10px 20px;
     font-size: 14px;
     font-family: monaco,courier;
-    border: 1px solid #ccc;
-    border-radius: 2px 2px 2px 2px;
+    border: 1px solid $accent1;
+    border-radius: 4px;
   }
 }
