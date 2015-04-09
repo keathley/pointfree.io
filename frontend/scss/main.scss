@@ -2,11 +2,11 @@
 
 $background: #181818;
 $copy: #E8E8E8;
-// $headline: #F7CA88;
 $headline: #7CAFC2;
 $accent1: #b8b8b8;
 $accent2: #1AD3F1;
 $accent3: #FDE403;
+$link: #F7CA88;
 
 html {
   color: #404040;
@@ -20,6 +20,15 @@ h1, h2, h3, h4, h5, h6 {
 
 p, span {
   color: $copy;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
 }
 
 .site {
@@ -54,14 +63,16 @@ p, span {
       margin-top: 20px;
       font-size: 20px;
     }
+
+    p {
+      text-align: center;
+    }
   }
 }
 
 .form-container {
-  // border: 2px solid #ccc;
-  // border-radius: 0.2857rem;
-  padding: 1em 1.5em;
   margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .code {
