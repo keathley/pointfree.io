@@ -11,7 +11,9 @@ p, span {
   color: #E8E8E8; }
 
 p {
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: lighter; }
 
 a {
   color: #F7CA88;
@@ -53,7 +55,7 @@ a {
 
 .form-container {
   margin-top: 60px;
-  margin-bottom: 30px; }
+  margin-bottom: 80px; }
 
 .code__label {
   margin-bottom: 3px;
