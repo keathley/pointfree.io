@@ -62,11 +62,14 @@
 	    if (keyCode && keyCode !== 13 && keyCode !== 1) return;
 
 	    var c = $('.js-original-code').val()
+	    var data = "code=" + encodeURIComponent(c)
+
+	    console.log(data)
 
 	    $.ajax({
 	      method: 'GET',
 	      url: '/snippet',
-	      data: "code=" + c,
+	      data: data,
 	      success: handleAjaxSuccess
 	    });
 

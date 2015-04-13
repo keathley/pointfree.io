@@ -30,7 +30,7 @@ main = do
 
     get "/snippet" $ do
       c  <- param "code"
-      pf    <- liftIO $ pointsFree c
+      pf <- liftIO $ pointsFree c
       json (PFCode pf)
 
     notFound $ text "that route does not exist"
