@@ -30,7 +30,7 @@ main = do
     get "/" $ file "static/index.html"
 
     get "/snippet" $ do
-      c  <- param "code"
+      c <- param "code"
       case pointfree' c of
         Nothing -> raise $ mconcat ["Error with this code"]
         Just pf -> json $ PFCode pf
