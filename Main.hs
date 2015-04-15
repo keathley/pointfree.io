@@ -10,6 +10,7 @@ import Control.Monad
 import Control.Monad.IO.Class
 import Data.Monoid (mconcat)
 import Data.Aeson (FromJSON, ToJSON, decode, encode)
+import Pointfree
 
 import qualified Data.Text.Lazy as T
 
@@ -30,11 +31,8 @@ main = do
 
     get "/snippet" $ do
       c  <- param "code"
-      pf <- liftIO $ pointsFree c
-      json (PFCode pf)
+      case pointfree' c of
+        Nothing -> raise $ mconcat ["Error with this code"]
+        Just pf -> json $ PFCode pf
 
     notFound $ text "that route does not exist"
-
-pointsFree code = readProcess process (sanitizeArgs code) ""
-sanitizeArgs = words
-process = "./bin/pointfree"
