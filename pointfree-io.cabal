@@ -29,5 +29,6 @@ executable pointfree-io
                       , transformers
                       , bytestring
                       , time
+                      , pointfree == 1.1
   default-language:    Haskell2010
 

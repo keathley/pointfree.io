@@ -64,8 +64,6 @@
 	    var c = $('.js-original-code').val()
 	    var data = "code=" + encodeURIComponent(c)
 
-	    console.log(data)
-
 	    $.ajax({
 	      method: 'GET',
 	      url: '/snippet',
