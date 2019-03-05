@@ -20,6 +20,9 @@ data PFCode = PFCode { code :: String } deriving (Show, Generic)
 instance ToJSON PFCode
 instance FromJSON PFCode
 
+newtype Error = Error {error :: String } deriving (Show, Generic)
+instance ToJSON Error
+
 main = do
   port <- liftM read $ getEnv "PORT"
 
@@ -32,7 +35,7 @@ main = do
     get "/snippet" $ do
       c <- param "code"
       case pointfree' c of
-        Nothing -> raise $ mconcat ["Error with this code"]
+        Nothing -> json $ Error "Error with this code"
         Just pf -> json $ PFCode pf
 
     notFound $ text "that route does not exist"
