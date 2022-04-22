@@ -11,3 +11,5 @@ cabal.sandbox.config
 bin/
 node_modules/
 
+.DS_Store
+.stack-work/
