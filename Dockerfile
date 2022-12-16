@@ -10,6 +10,7 @@ RUN apt-get update && \
       libffi-dev=3.3-6 \
       libgmp-dev=2:6.2.1+dfsg-1+deb11u1 \
       libncurses-dev=6.2+20201114-2 \
+      libnuma1=2.0.12-1+b1 \
       zlib1g-dev=1:1.2.11.dfsg-2+deb11u2 && \
     rm -rf /var/lib/apt/lists/*
 
