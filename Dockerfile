@@ -1,30 +1,30 @@
-FROM debian:bullseye-20221219-slim
+FROM haskell:9.0.2-buster AS builder
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-      build-essential=12.9 \
-      ca-certificates=20210119 \
-      curl=7.74.0-1.3+deb11u3 \
-      git=1:2.30.2-1 \
-      libffi-dev=3.3-6 \
-      libgmp-dev=2:6.2.1+dfsg-1+deb11u1 \
-      libncurses-dev=6.2+20201114-2 \
-      libnuma-dev=2.0.12-1+b1 \
-      zlib1g-dev=1:1.2.11.dfsg-2+deb11u2 && \
-    rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/pointfree-io
 
-ARG CABAL_VERSION=3.6.2.0
-ARG GHC_VERSION=9.0.2
+RUN cabal update
 
-RUN curl https://downloads.haskell.org/~ghcup/x86_64-linux-ghcup > /usr/bin/ghcup && \
-    chmod +x /usr/bin/ghcup && \
-    ghcup -v install ghc --isolate /usr/local --force ${GHC_VERSION} && \
-    ghcup -v install cabal --isolate /usr/local/bin --force ${CABAL_VERSION} && \
-    cabal update 
+COPY ./pointfree-io.cabal /opt/pointfree-io/pointfree-io.cabal
 
-COPY . .
+RUN cabal build --only-dependencies -j4
 
-RUN cabal configure && cabal install
+COPY . /opt/pointfree-io
+RUN cabal install --enable-executable-static --install-method=copy --installdir=bin
 
-ENTRYPOINT ["cabal", "run"]
+ENTRYPOINT ["pointfree-io"]
+
+FROM debian:buster-slim
+
+EXPOSE 8080
+
+ENV PORT 8080
+
+WORKDIR /opt/pointfree-io
+
+RUN apt update && apt install libnuma1
+
+COPY --from=builder /opt/pointfree-io/bin/pointfree-io .
+COPY ./static /opt/pointfree-io/static
+
+CMD "/opt/pointfree-io/pointfree-io"
